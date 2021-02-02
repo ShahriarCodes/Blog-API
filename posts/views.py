@@ -7,12 +7,14 @@ from .serializers import PostSerializer
 
 
 class PostList(generics.ListCreateAPIView):
-    permission_classes = (permissions.IsAuthenticated,)
+    ## not required if project level permission set to IsAuthenticated inside setting.py
+    # permission_classes = (permissions.IsAuthenticated,)
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
 
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = (permissions.IsAuthenticated,)
+    ## not required if project level permission set to IsAuthenticated inside setting.py
+    # permission_classes = (permissions.IsAuthenticated,)
     queryset = Post.objects.all()
     serializer_class = PostSerializer
